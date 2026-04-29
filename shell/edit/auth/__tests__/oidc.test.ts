@@ -328,7 +328,11 @@ describe('oidc.vue', () => {
       });
 
       it('updates model when checkbox is clicked', async() => {
-        await wrapper.setData({ model: { ...mockModel, id: 'keycloakoidc', clientAuthenticatedSearch: false } });
+        await wrapper.setData({
+          model: {
+            ...mockModel, id: 'keycloakoidc', clientAuthenticatedSearch: false
+          }
+        });
 
         const checkbox = wrapper.getComponent('[data-testid="input-client-authenticated-group-search"]');
 
@@ -338,7 +342,11 @@ describe('oidc.vue', () => {
       });
 
       it('reflects a pre-existing true value from the model', async() => {
-        await wrapper.setData({ model: { ...mockModel, id: 'keycloakoidc', clientAuthenticatedSearch: true } });
+        await wrapper.setData({
+          model: {
+            ...mockModel, id: 'keycloakoidc', clientAuthenticatedSearch: true
+          }
+        });
 
         expect(wrapper.vm.model.clientAuthenticatedSearch).toBe(true);
       });
